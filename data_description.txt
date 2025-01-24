@@ -57,14 +57,14 @@ LandContour: Flatness of the property
        HLS	Hillside - Significant slope from side to side
        Low	Depression
 		
-Utilities: Type of utilities available
+Utilities: Type of utilities available # all are pubs
 		
        AllPub	All public Utilities (E,G,W,& S)	
        NoSewr	Electricity, Gas, and Water (Septic Tank)
        NoSeWa	Electricity and Gas Only
        ELO	Electricity only	
 	
-LotConfig: Lot configuration
+LotConfig: Lot configuration # 
 
        Inside	Inside lot
        Corner	Corner lot
@@ -72,13 +72,13 @@ LotConfig: Lot configuration
        FR2	Frontage on 2 sides of property
        FR3	Frontage on 3 sides of property
 	
-LandSlope: Slope of property
+LandSlope: Slope of property # land slop
 		
        Gtl	Gentle slope
        Mod	Moderate Slope	
        Sev	Severe Slope
 	
-Neighborhood: Physical locations within Ames city limits
+Neighborhood: Physical locations within Ames city limits # most are too low 
 
        Blmngtn	Bloomington Heights
        Blueste	Bluestem
@@ -106,7 +106,7 @@ Neighborhood: Physical locations within Ames city limits
        Timber	Timberland
        Veenker	Veenker
 			
-Condition1: Proximity to various conditions
+Condition1: Proximity to various conditions # done
 	
        Artery	Adjacent to arterial street
        Feedr	Adjacent to feeder street	
@@ -130,7 +130,7 @@ Condition2: Proximity to various conditions (if more than one is present)
        RRNe	Within 200' of East-West Railroad
        RRAe	Adjacent to East-West Railroad
 	
-BldgType: Type of dwelling
+BldgType: Type of dwelling # done
 		
        1Fam	Single-family Detached	
        2FmCon	Two-family Conversion; originally built as one-family dwelling
@@ -138,7 +138,7 @@ BldgType: Type of dwelling
        TwnhsE	Townhouse End Unit
        TwnhsI	Townhouse Inside Unit
 	
-HouseStyle: Style of dwelling
+HouseStyle: Style of dwelling # done
 	
        1Story	One story
        1.5Fin	One and one-half story: 2nd level finished
@@ -175,7 +175,7 @@ OverallCond: Rates the overall condition of the house
        2	Poor
        1	Very Poor
 		
-YearBuilt: Original construction date
+YearBuilt: Original construction date # syart
 
 YearRemodAdd: Remodel date (same as construction date if no remodeling or additions)
 
@@ -188,7 +188,7 @@ RoofStyle: Type of roof
        Mansard	Mansard
        Shed	Shed
 		
-RoofMatl: Roof material
+RoofMatl: Roof material # all same
 
        ClyTile	Clay or Tile
        CompShg	Standard (Composite) Shingle
@@ -239,7 +239,7 @@ Exterior2nd: Exterior covering on house (if more than one material)
        Wd Sdng	Wood Siding
        WdShing	Wood Shingles
 	
-MasVnrType: Masonry veneer type
+MasVnrType: Masonry veneer type #all same
 
        BrkCmn	Brick Common
        BrkFace	Brick Face
@@ -247,7 +247,7 @@ MasVnrType: Masonry veneer type
        None	None
        Stone	Stone
 	
-MasVnrArea: Masonry veneer area in square feet
+MasVnrArea: Masonry veneer area in square feet # done
 
 ExterQual: Evaluates the quality of the material on the exterior 
 		
@@ -274,7 +274,7 @@ Foundation: Type of foundation
        Stone	Stone
        Wood	Wood
 		
-BsmtQual: Evaluates the height of the basement
+BsmtQual: Evaluates the height of the basement # dones
 
        Ex	Excellent (100+ inches)	
        Gd	Good (90-99 inches)
@@ -328,7 +328,7 @@ BsmtUnfSF: Unfinished square feet of basement area
 
 TotalBsmtSF: Total square feet of basement area
 
-Heating: Type of heating
+Heating: Type of heating # type of heating
 		
        Floor	Floor Furnace
        GasA	Gas forced warm air furnace
@@ -345,12 +345,12 @@ HeatingQC: Heating quality and condition
        Fa	Fair
        Po	Poor
 		
-CentralAir: Central air conditioning
+CentralAir: Central air conditioning # most are yes
 
        N	No
        Y	Yes
 		
-Electrical: Electrical system
+Electrical: Electrical system # most same
 
        SBrkr	Standard Circuit Breakers & Romex
        FuseA	Fuse Box over 60 AMP and all Romex wiring (Average)	
@@ -364,17 +364,17 @@ Electrical: Electrical system
 
 LowQualFinSF: Low quality finished square feet (all floors)
 
-GrLivArea: Above grade (ground) living area square feet
+GrLivArea: Above grade (ground) living area square feet # done
 
 BsmtFullBath: Basement full bathrooms
 
-BsmtHalfBath: Basement half bathrooms
+BsmtHalfBath: Basement half bathrooms # dinw
 
-FullBath: Full bathrooms above grade
+FullBath: Full bathrooms above grade 
 
-HalfBath: Half baths above grade
+HalfBath: Half baths above grade # done
 
-Bedroom: Bedrooms above grade (does NOT include basement bedrooms)
+Bedroom: Bedrooms above grade (does NOT include basement bedrooms) # 
 
 Kitchen: Kitchens above grade
 
@@ -399,9 +399,9 @@ Functional: Home functionality (Assume typical unless deductions are warranted)
        Sev	Severely Damaged
        Sal	Salvage only
 		
-Fireplaces: Number of fireplaces
+Fireplaces: Number of fireplaces # done
 
-FireplaceQu: Fireplace quality
+FireplaceQu: Fireplace quality # same
 
        Ex	Excellent - Exceptional Masonry Fireplace
        Gd	Good - Masonry Fireplace in main level
@@ -420,7 +420,7 @@ GarageType: Garage location
        Detchd	Detached from home
        NA	No Garage
 		
-GarageYrBlt: Year garage was built
+GarageYrBlt: Year garage was built  # done
 		
 GarageFinish: Interior finish of the garage
 
@@ -429,7 +429,7 @@ GarageFinish: Interior finish of the garage
        Unf	Unfinished
        NA	No Garage
 		
-GarageCars: Size of garage in car capacity
+GarageCars: Size of garage in car capacity # done
 
 GarageArea: Size of garage in square feet
 
@@ -451,7 +451,7 @@ GarageCond: Garage condition
        Po	Poor
        NA	No Garage
 		
-PavedDrive: Paved driveway
+PavedDrive: Paved driveway # done
 
        Y	Paved 
        P	Partial Pavement
@@ -459,15 +459,15 @@ PavedDrive: Paved driveway
 		
 WoodDeckSF: Wood deck area in square feet
 
-OpenPorchSF: Open porch area in square feet
+OpenPorchSF: Open porch area in square feet # done
 
-EnclosedPorch: Enclosed porch area in square feet
+EnclosedPorch: Enclosed porch area in square feet # most 0
 
-3SsnPorch: Three season porch area in square feet
+3SsnPorch: Three season porch area in square feet # done
 
-ScreenPorch: Screen porch area in square feet
+ScreenPorch: Screen porch area in square feet # most 0
 
-PoolArea: Pool area in square feet
+PoolArea: Pool area in square feet # done
 
 PoolQC: Pool quality
 		
@@ -477,7 +477,7 @@ PoolQC: Pool quality
        Fa	Fair
        NA	No Pool
 		
-Fence: Fence quality
+Fence: Fence quality # done
 		
        GdPrv	Good Privacy
        MnPrv	Minimum Privacy
