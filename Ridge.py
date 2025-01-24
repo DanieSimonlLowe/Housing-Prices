@@ -1,8 +1,7 @@
 from data import getTrain
 from sklearn.linear_model import BayesianRidge
-from sklearn.model_selection import RepeatedKFold
-from skopt import BayesSearchCV
-from skopt.space import Real
+from sklearn.ensemble import BaggingRegressor
+
 
 def makeModel():
     x, y = getTrain()
@@ -15,8 +14,7 @@ def makeModel():
     model.fit(x,y)
     # 0.9112801831575257
     print(model.score(x_val,y_val))
-    print(model.best_params_)
-
+    
     return model
 
 if (__name__ == '__main__'):
