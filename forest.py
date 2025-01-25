@@ -12,7 +12,7 @@ def makeModel():
 
     model = RandomForestRegressor()
     model.fit(x,y)
-    # 0.910969605236683
+    # 0.9256716348108855
     print(model.score(x_val,y_val))
 
     return model

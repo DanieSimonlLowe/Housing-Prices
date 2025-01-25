@@ -1,5 +1,5 @@
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, PolynomialFeatures
 import matplotlib.pyplot as plt
 
 scaler = None
@@ -195,12 +195,22 @@ def loadData(dataset):
         'NA': None,
     })
 
+
+
+    base.loc[:,'YrSold'] = dataset['YrSold'] * 12
+    base.loc[:,'MoSold'] = dataset['MoSold']
+
     for col in base.columns:
         base.loc[:, col] = base[col].fillna(base[col].median())
 
-    base.loc[:,'dateSold'] = dataset['YrSold'] * 12 + dataset['YrSold']
-
     base.loc[:,'SaleCondition'] = dataset['SaleCondition'] == 'Normal'
+
+    base.loc[:,'YearBuilt_Diff'] = base['YrSold'] - base['YearBuilt']
+    base.loc[:,'GarageYrBlt_Diff'] = base['YrSold'] - base['GarageYrBlt']
+    base.loc[:,'YearRemodAdd_Diff'] = base['YrSold'] - base['YearRemodAdd']
+
+    for col in base.columns:
+        base.loc[:, col] = base[col].fillna(base[col].median())
 
     global scaler
     if (scaler == None):
@@ -208,6 +218,11 @@ def loadData(dataset):
         base = pd.DataFrame(scaler.fit_transform(base), columns=base.columns)
     else:
         base = pd.DataFrame(scaler.transform(base), columns=base.columns)
+
+    base = pd.get_dummies(base)
+
+    poly = PolynomialFeatures(degree=2)
+    base = poly.fit_transform(base)
 
     return base
 
@@ -223,7 +238,8 @@ def getTrain():
         y = scalerY.transform(y)
     y = pd.DataFrame(y, columns=["SalePrice"])
 
-    x = pd.get_dummies(loadData(train_data))
+    x = loadData(train_data)
+
 
     return x, y
 

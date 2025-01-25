@@ -12,7 +12,7 @@ def makeModel():
 
     model = BayesianRidge()
     model.fit(x,y)
-    # 0.9112801831575257
+    # 0.9219399328093683
     print(model.score(x_val,y_val))
     
     return model
