@@ -248,6 +248,10 @@ def getHistagram():
     # Show the plot
     plt.show()
 
+def getScalerY():
+    global scalerY
+    return scalerY
+
 if (__name__ == '__main__'):
     #getHistagram()
     print(getTrain())

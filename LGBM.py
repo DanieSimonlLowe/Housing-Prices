@@ -1,7 +1,6 @@
 from data import getTrain
-from sklearn.ensemble import RandomForestRegressor
-from skopt import BayesSearchCV
-from skopt.space import Real, Integer
+from lightgbm  import LGBMRegressor
+
 
 def makeModel():
     x, y = getTrain()
@@ -10,11 +9,11 @@ def makeModel():
     x = x[:-100]
     y = y[:-100]
 
-    model = RandomForestRegressor()
+    model = LGBMRegressor()
     model.fit(x,y)
-    # 0.910969605236683
+    # 0.9266449954602564
     print(model.score(x_val,y_val))
-
+    
     return model
 
 if (__name__ == '__main__'):
