@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 scaler = None
 scalerY = None
 
-def loadData(dataset):
+def loadDataBase(dataset):
     print(dataset.columns)  
     classes = ["MSSubClass", "LotArea", "LotFrontage", 'OverallQual', 'OverallCond', 'YearBuilt', 'YearRemodAdd', 
                'MasVnrArea', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', '1stFlrSF', '2ndFlrSF', 'GrLivArea',
@@ -221,6 +221,13 @@ def loadData(dataset):
 
     base = pd.get_dummies(base)
 
+    return base
+
+def loadData(dataset):
+    base = loadDataBase(dataset)
+
+    base = getEncoder().transform(base)
+
     poly = PolynomialFeatures(degree=2)
     base = poly.fit_transform(base)
 
@@ -268,6 +275,26 @@ def getScalerY():
     global scalerY
     return scalerY
 
+from feature_engine.selection import DropCorrelatedFeatures
+
+encoder = None
+def getEncoder():
+    global encoder
+    if encoder != None:
+        return encoder
+    else:
+        train_data = loadDataBase(pd.read_csv('C:\\Users\\Danie\\Desktop\\work\\kaggle\\home-prices\\train.csv'))
+        test_data = loadDataBase(pd.read_csv('C:\\Users\\Danie\\Desktop\\work\\kaggle\\home-prices\\test.csv'))
+        
+        data = pd.concat([train_data, test_data], ignore_index=True)
+        print(data.shape)
+        encoder = DropCorrelatedFeatures(threshold=0.8)
+        encoder.fit(data)
+        print(encoder.transform(data).shape)
+        return encoder
+
+
+
 if (__name__ == '__main__'):
     #getHistagram()
-    print(getTrain())
+    getEncoder()
